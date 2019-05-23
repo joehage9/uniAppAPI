@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="universityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="passwordhash" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="administrative">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="passwordhash" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="privilegeLevel" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'university.dbo.course_student' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="course_student">
+    <Key>
+      <PropertyRef Name="courseID" />
+      <PropertyRef Name="studentID" />
+      <PropertyRef Name="courseYearOfEnrollment" />
+      <PropertyRef Name="passed" />
+      <PropertyRef Name="semesterID" />
+    </Key>
+    <Property Name="courseID" Type="int" Nullable="false" />
+    <Property Name="studentID" Type="int" Nullable="false" />
+    <Property Name="courseYearOfEnrollment" Type="int" Nullable="false" />
+    <Property Name="passed" Type="tinyint" Nullable="false" />
+    <Property Name="semesterID" Type="int" Nullable="false" />
+    <Property Name="midtermGrade" Type="int" />
+    <Property Name="finalGrade" Type="int" />
+    <Property Name="attendanceGrade" Type="int" />
+    <Property Name="grade" Type="int" />
+  </EntityType>
+  <EntityType Name="courses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="numberOfCredits" Type="int" Nullable="false" />
+    <Property Name="majorID" Type="int" Nullable="false" />
+    <Property Name="teacherID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="major">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="numberOfCredits" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="major_student">
+    <Key>
+      <PropertyRef Name="majorID" />
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="majorID" Type="int" Nullable="false" />
+    <Property Name="studentID" Type="int" Nullable="false" />
+    <Property Name="enrollmentDate" Type="date" Nullable="false" />
+    <Property Name="nbOfYearsInTheMajor" Type="int" Nullable="false" />
+    <Property Name="finishedMajor" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="semester">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="students">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fatherName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="passwordHash" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="enrollmentDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teachers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="passwordhash" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="universityModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="administrative" EntityType="Self.administrative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="courses" EntityType="Self.courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="major" EntityType="Self.major" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="major_student" EntityType="Self.major_student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="semester" EntityType="Self.semester" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="students" EntityType="Self.students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="teachers" EntityType="Self.teachers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="course_student" EntityType="Self.course_student" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [course_student].[courseID] AS [courseID], 
+    [course_student].[studentID] AS [studentID], 
+    [course_student].[courseYearOfEnrollment] AS [courseYearOfEnrollment], 
+    [course_student].[passed] AS [passed], 
+    [course_student].[semesterID] AS [semesterID], 
+    [course_student].[midtermGrade] AS [midtermGrade], 
+    [course_student].[finalGrade] AS [finalGrade], 
+    [course_student].[attendanceGrade] AS [attendanceGrade], 
+    [course_student].[grade] AS [grade]
+    FROM [dbo].[course_student] AS [course_student]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
