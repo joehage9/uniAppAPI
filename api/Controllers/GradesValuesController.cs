@@ -20,8 +20,6 @@ namespace api.Controllers
 
             List<course_student> course_StudentsList = new List<course_student>();
 
-
-
             using (universityEntities db = new universityEntities())
             {
                 course_StudentsList = (from a in db.course_student
@@ -31,13 +29,11 @@ namespace api.Controllers
 
                 if (course_StudentsList.Count > 1)
                 {
-                    var result = new { CourseList = course_StudentsList };
-                    return Json(result);
+                    return Ok(course_StudentsList);
                 }
                 else
                 {
-                    var result = new { Error = "request failed." };
-                    return Json(result);
+                    return Ok("Empty");
                 }
             }
         }
