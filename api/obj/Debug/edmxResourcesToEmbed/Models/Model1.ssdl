@@ -9,7 +9,7 @@
     <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="passwordhash" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="passwordHash" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -23,21 +23,15 @@
     <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="passwordhash" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="passwordHash" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="privilegeLevel" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'university.dbo.course_student' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="course_student">
     <Key>
-      <PropertyRef Name="courseID" />
-      <PropertyRef Name="studentID" />
-      <PropertyRef Name="courseYearOfEnrollment" />
-      <PropertyRef Name="passed" />
-      <PropertyRef Name="semesterID" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="courseID" Type="int" Nullable="false" />
     <Property Name="studentID" Type="int" Nullable="false" />
@@ -48,6 +42,7 @@ warning 6002: The table/view 'university.dbo.course_student' does not have a pri
     <Property Name="finalGrade" Type="int" />
     <Property Name="attendanceGrade" Type="int" />
     <Property Name="grade" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="courses">
     <Key>
@@ -75,7 +70,7 @@ warning 6002: The table/view 'university.dbo.course_student' does not have a pri
     </Key>
     <Property Name="majorID" Type="int" Nullable="false" />
     <Property Name="studentID" Type="int" Nullable="false" />
-    <Property Name="enrollmentDate" Type="date" Nullable="false" />
+    <Property Name="enrollmentDate" Type="datetime" Nullable="false" />
     <Property Name="nbOfYearsInTheMajor" Type="int" Nullable="false" />
     <Property Name="finishedMajor" Type="tinyint" Nullable="false" />
   </EntityType>
@@ -83,7 +78,7 @@ warning 6002: The table/view 'university.dbo.course_student' does not have a pri
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="students">
@@ -100,7 +95,7 @@ warning 6002: The table/view 'university.dbo.course_student' does not have a pri
     <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="enrollmentDate" Type="date" Nullable="false" />
+    <Property Name="enrollmentDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="teachers">
     <Key>
@@ -111,7 +106,7 @@ warning 6002: The table/view 'university.dbo.course_student' does not have a pri
     <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="passwordhash" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="passwordHash" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -119,24 +114,12 @@ warning 6002: The table/view 'university.dbo.course_student' does not have a pri
   <EntityContainer Name="universityModelStoreContainer">
     <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="administrative" EntityType="Self.administrative" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="course_student" EntityType="Self.course_student" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="courses" EntityType="Self.courses" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="major" EntityType="Self.major" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="major_student" EntityType="Self.major_student" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="semester" EntityType="Self.semester" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="students" EntityType="Self.students" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="teachers" EntityType="Self.teachers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="course_student" EntityType="Self.course_student" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [course_student].[courseID] AS [courseID], 
-    [course_student].[studentID] AS [studentID], 
-    [course_student].[courseYearOfEnrollment] AS [courseYearOfEnrollment], 
-    [course_student].[passed] AS [passed], 
-    [course_student].[semesterID] AS [semesterID], 
-    [course_student].[midtermGrade] AS [midtermGrade], 
-    [course_student].[finalGrade] AS [finalGrade], 
-    [course_student].[attendanceGrade] AS [attendanceGrade], 
-    [course_student].[grade] AS [grade]
-    FROM [dbo].[course_student] AS [course_student]</DefiningQuery>
-    </EntitySet>
   </EntityContainer>
 </Schema>

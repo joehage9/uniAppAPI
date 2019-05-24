@@ -193,6 +193,7 @@
     <Compile Include="Controllers\AdminsValuesController.cs" />
     <Compile Include="Controllers\CoursesStudentsValuesController.cs" />
     <Compile Include="Controllers\CoursesValuesController.cs" />
+    <Compile Include="Controllers\GradesValuesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginValuesController.cs" />
     <Compile Include="Controllers\MajorsStudentsValuesController.cs" />
@@ -241,9 +242,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\student.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\teacher.cs">
@@ -330,6 +328,7 @@
     <Folder Include="Views\AdminsValues\" />
     <Folder Include="Views\CoursesStudentsValues\" />
     <Folder Include="Views\CoursesValues\" />
+    <Folder Include="Views\GradesValues\" />
     <Folder Include="Views\LoginValues\" />
     <Folder Include="Views\MajorsStudentsValues\" />
     <Folder Include="Views\MajorsValues\" />

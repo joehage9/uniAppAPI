@@ -48,22 +48,22 @@ namespace api.Controllers
                                select t).ToList();
                 if (adminitrativeList.Count == 1 && adminList.Count == 0 && studentList.Count == 0 && teacherList.Count == 0)
                 {
-                    var result = new { Success = true, Role = "Administrative", Message = adminitrativeList };
+                    var result = new { Success = true, Role = "Administrative", Message = adminitrativeList[0] };
                     return Json(result);
                 }
                 else if (adminitrativeList.Count == 0 && adminList.Count == 1 && studentList.Count == 0 && teacherList.Count == 0)
                 {
-                    var result = new { Success = true, Role = "Admin", Message = adminList };
+                    var result = new { Success = true, Role = "Admin", Message = adminList[0] };
                     return Json(result);
                 }
                 else if (adminitrativeList.Count == 0 && adminList.Count == 0 && studentList.Count == 1 && teacherList.Count == 0)
                 {
-                    var result = new { Success = true, Role = "Student", Message = studentList };
+                    var result = new { Success = true, Role = "Student", Message = studentList[0] };
                     return Json(result);
                 }
                 else if (adminitrativeList.Count == 0 && adminList.Count == 0 && studentList.Count == 0 && teacherList.Count == 1)
                 {
-                    var result = new { Success = true, Role = "Teacher", Message = teacherList };
+                    var result = new { Success = true, Role = "Teacher", Message = teacherList[0] };
                     return Json(result);
                 }
                 else

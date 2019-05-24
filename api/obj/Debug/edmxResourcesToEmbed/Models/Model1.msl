@@ -9,7 +9,7 @@
           <ScalarProperty Name="lastName" ColumnName="lastName" />
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="passwordhash" ColumnName="passwordhash" />
+          <ScalarProperty Name="passwordHash" ColumnName="passwordHash" />
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="mobileNumber" ColumnName="mobileNumber" />
           <ScalarProperty Name="email" ColumnName="email" />
@@ -24,11 +24,27 @@
           <ScalarProperty Name="lastName" ColumnName="lastName" />
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="passwordhash" ColumnName="passwordhash" />
+          <ScalarProperty Name="passwordHash" ColumnName="passwordHash" />
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="mobileNumber" ColumnName="mobileNumber" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="privilegeLevel" ColumnName="privilegeLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="course_student">
+      <EntityTypeMapping TypeName="universityModel.course_student">
+        <MappingFragment StoreEntitySet="course_student">
+          <ScalarProperty Name="courseID" ColumnName="courseID" />
+          <ScalarProperty Name="studentID" ColumnName="studentID" />
+          <ScalarProperty Name="courseYearOfEnrollment" ColumnName="courseYearOfEnrollment" />
+          <ScalarProperty Name="passed" ColumnName="passed" />
+          <ScalarProperty Name="semesterID" ColumnName="semesterID" />
+          <ScalarProperty Name="midtermGrade" ColumnName="midtermGrade" />
+          <ScalarProperty Name="finalGrade" ColumnName="finalGrade" />
+          <ScalarProperty Name="attendanceGrade" ColumnName="attendanceGrade" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -97,25 +113,10 @@
           <ScalarProperty Name="lastName" ColumnName="lastName" />
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="passwordhash" ColumnName="passwordhash" />
+          <ScalarProperty Name="passwordHash" ColumnName="passwordHash" />
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="mobileNumber" ColumnName="mobileNumber" />
           <ScalarProperty Name="email" ColumnName="email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="course_student">
-      <EntityTypeMapping TypeName="universityModel.course_student">
-        <MappingFragment StoreEntitySet="course_student">
-          <ScalarProperty Name="courseID" ColumnName="courseID" />
-          <ScalarProperty Name="studentID" ColumnName="studentID" />
-          <ScalarProperty Name="courseYearOfEnrollment" ColumnName="courseYearOfEnrollment" />
-          <ScalarProperty Name="passed" ColumnName="passed" />
-          <ScalarProperty Name="semesterID" ColumnName="semesterID" />
-          <ScalarProperty Name="midtermGrade" ColumnName="midtermGrade" />
-          <ScalarProperty Name="finalGrade" ColumnName="finalGrade" />
-          <ScalarProperty Name="attendanceGrade" ColumnName="attendanceGrade" />
-          <ScalarProperty Name="grade" ColumnName="grade" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

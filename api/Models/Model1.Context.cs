@@ -33,7 +33,6 @@ namespace api.Models
         public virtual DbSet<major_student> major_student { get; set; }
         public virtual DbSet<semester> semesters { get; set; }
         public virtual DbSet<student> students { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<teacher> teachers { get; set; }
     }
 }

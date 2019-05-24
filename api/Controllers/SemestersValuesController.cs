@@ -10,7 +10,7 @@ namespace api.Controllers
 {
     public class SemestersValuesController : ApiController
     {
-        // GET: SemesterValues
+        // GET: SemestersValues
         public IHttpActionResult Get()
         {
             List<semester> semesterList = new List<semester>();
@@ -21,7 +21,7 @@ namespace api.Controllers
                 return Ok(semesterList);
             }
         }
-        // POST:  SemesterValues
+        // POST:  SemestersValues
         public IHttpActionResult Post(InsertSemester value)
         {
             using (universityEntities db = new universityEntities())

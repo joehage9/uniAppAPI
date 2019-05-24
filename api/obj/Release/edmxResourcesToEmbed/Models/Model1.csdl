@@ -97,16 +97,6 @@
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="enrollmentDate" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="teacher">
     <Key>
       <PropertyRef Name="ID" />
@@ -130,7 +120,6 @@
     <EntitySet Name="major_student" EntityType="Self.major_student" />
     <EntitySet Name="semesters" EntityType="Self.semester" />
     <EntitySet Name="students" EntityType="Self.student" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="teachers" EntityType="Self.teacher" />
   </EntityContainer>
 </Schema>

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b7163f2419e34d7ebca7afea97eda584" Name="Diagram1">
+      <Diagram DiagramId="d1b9422edb4a46a3b12e0f0794a6e833" Name="Diagram1">
         <EntityTypeShape EntityType="universityModel.admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="universityModel.administrative" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="universityModel.course_student" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
@@ -13,8 +13,7 @@
         <EntityTypeShape EntityType="universityModel.major_student" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="universityModel.semester" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="universityModel.student" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="universityModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="universityModel.teacher" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="universityModel.teacher" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
